@@ -5,6 +5,7 @@
 import * as Frontend from '@singleware/frontend';
 
 import * as Default from '../modules/default';
+import * as Projects from '../modules/projects';
 
 (async function() {
   // Main application instance.
@@ -20,6 +21,7 @@ import * as Default from '../modules/default';
 
   // Setup all page handlers.
   application.addHandler(Default.Handler, settings);
+  application.addHandler(Projects.Singleware.Handler, settings);
 
   // Starts actions.
   application.start();

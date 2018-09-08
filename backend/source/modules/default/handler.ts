@@ -24,8 +24,8 @@ export class Handler extends Backend.Handlers.File.Default {
    * Default response processor.
    * @param match Matched route.
    */
-  @Backend.Processor({ path: '/', exact: false, environment: { methods: 'GET' } })
   @Class.Public()
+  @Backend.Processor({ path: '/', exact: false, environment: { methods: 'GET' } })
   public async defaultResponse(match: Backend.Match): Promise<void> {
     await super.defaultResponse(match);
   }
@@ -34,8 +34,9 @@ export class Handler extends Backend.Handlers.File.Default {
    * Index response processor.
    * @param match Matched route.
    */
-  @Backend.Processor({ path: '/about', exact: false, environment: { methods: 'GET' } })
   @Class.Public()
+  @Backend.Processor({ path: '/about', exact: false, environment: { methods: 'GET' } })
+  @Backend.Processor({ path: '/projects/singleware', exact: false, environment: { methods: 'GET' } })
   public async indexResponse(match: Backend.Match): Promise<void> {
     await this.setResponseFile(match.detail.output, '/index.html');
   }

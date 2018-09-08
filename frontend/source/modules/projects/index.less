@@ -1,0 +1,28 @@
+/**
+ * Copyright (C) 2018 balmante.eti.br
+ * Projects module styles
+ */
+@import './theme.less';
+@import './components/index.less';
+@import './singleware/index.less';
+
+.main .project {
+  display: flex;
+  flex-direction: row;
+
+  .menu {
+    width: 20vw;
+    height: 100vh;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background-color: @menu-background-color;
+  }
+
+  .content {
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+}
