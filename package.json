@@ -1,0 +1,36 @@
+{
+  "name": "balmante-eti",
+  "description": "Balmante ETI website.",
+  "version": "1.0.0",
+  "engines": {
+    "node": "10.7.0"
+  },
+  "dependencies": {
+    "@singleware/backend": "^1.0.32",
+    "@singleware/bundler": "^1.0.16",
+    "@singleware/frontend": "^1.0.21"
+  },
+  "devDependencies": {
+    "@types/node": "^10.9.4",
+    "google-closure-compiler": "^20180805.0.0",
+    "less": "^3.8.1",
+    "prettier": "^1.14.2",
+    "typescript": "^2.9.2"
+  },
+  "prettier": {
+    "printWidth": 140,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "semi": true
+  },
+  "scripts": {
+    "start": "node -r ./backend/release/server/main.js",
+    "make-all": "npm run make-backend && npm run make-frontend",
+    "make-backend": "tsc --project ./backend",
+    "make-frontend": "npm run make-frontend-ts && npm run make-bundle && npm run minify && npm run make-frontend-less",
+    "make-frontend-ts": "tsc --project ./frontend",
+    "make-frontend-less": "lessc -x ./frontend/source/browser/main.less > ./frontend/public/index.min.css",
+    "make-bundle": "node ./frontend/release/tools/bundler.js",
+    "minify": "npx google-closure-compiler --language_in ECMASCRIPT_NEXT --language_out ECMASCRIPT_2017 --js frontend/release/index.js > frontend/public/index.min.js"
+  }
+}
