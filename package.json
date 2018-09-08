@@ -28,7 +28,7 @@
     "semi": true
   },
   "scripts": {
-    "start": "node -r ./backend/release/server/main.js",
+    "start": "npm run make-all && node ./backend/release/server/main.js",
     "make-all": "npm run make-backend && npm run make-frontend",
     "make-backend": "tsc --project ./backend",
     "make-frontend": "npm run make-frontend-ts && npm run make-bundle && npm run minify && npm run make-frontend-less",
