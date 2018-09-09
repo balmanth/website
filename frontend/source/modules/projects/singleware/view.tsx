@@ -7,9 +7,10 @@ import * as DOM from '@singleware/jsx';
 import * as Control from '@singleware/ui-control';
 
 import { Sidebar } from './components';
+import { Properties } from './properties';
 
 @Class.Describe()
-export class View extends Control.Component<{}> {
+export class View extends Control.Component<Properties> {
   /**
    * View skeleton.
    */
@@ -17,52 +18,52 @@ export class View extends Control.Component<{}> {
   private skeleton: HTMLDivElement = (
     <div class="singleware project">
       <div class="menu">
-        <Sidebar.Menu>
+        <Sidebar.Menu client={this.properties.client}>
           <Sidebar.Item>
             <h4>UI Examples</h4>
           </Sidebar.Item>
           <Sidebar.Item>
-            <a>Checkbox</a>
+            <a href="checkbox">Checkbox</a>
           </Sidebar.Item>
           <Sidebar.Item>
-            <a>Dialog</a>
+            <a href="dialog">Dialog</a>
           </Sidebar.Item>
           <Sidebar.Item>
-            <a>Editor</a>
+            <a href="editor">Editor</a>
           </Sidebar.Item>
           <Sidebar.Item>
-            <a>Field</a>
+            <a href="field">Field</a>
           </Sidebar.Item>
           <Sidebar.Item>
-            <a>Form</a>
+            <a href="form">Form</a>
           </Sidebar.Item>
           <Sidebar.Item>
-            <a>Import</a>
+            <a href="import">Import</a>
           </Sidebar.Item>
           <Sidebar.Item>
-            <a>Password</a>
+            <a href="password">Password</a>
           </Sidebar.Item>
           <Sidebar.Item>
-            <a>Progress</a>
+            <a href="progress">Progress</a>
           </Sidebar.Item>
           <Sidebar.Item>
-            <a>Radiobox</a>
+            <a href="radiobox">Radiobox</a>
           </Sidebar.Item>
           <Sidebar.Item>
-            <a>Switch</a>
+            <a href="switch">Switch</a>
           </Sidebar.Item>
           <Sidebar.Item>
-            <a>Tabs</a>
+            <a href="tabs">Tabs</a>
           </Sidebar.Item>
           <Sidebar.Item>
-            <a>Toggle</a>
+            <a href="toggle">Toggle</a>
           </Sidebar.Item>
           <Sidebar.Item>
-            <a>Toolbar</a>
+            <a href="toolbar">Toolbar</a>
           </Sidebar.Item>
         </Sidebar.Menu>
       </div>
-      <div class="content">..</div>
+      <div class="content">{this.properties.content}</div>
     </div>
   ) as HTMLDivElement;
 

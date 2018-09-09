@@ -9,15 +9,20 @@ import * as Projects from '../modules/projects';
 
 (async function() {
   // Main application instance.
-  const application = new Frontend.Main({});
-
-  // Application settings.
-  const settings = Object.freeze({
-    application: application
+  const application = new Frontend.Main({
+    title: {
+      text: 'Balmante',
+      separator: ' - '
+    }
   });
 
   // Setup the browser service.
-  application.addService(Frontend.Services.Client, {});
+  const client = application.addService(Frontend.Services.Client, {});
+
+  // Application settings.
+  const settings = Object.freeze({
+    client: client
+  });
 
   // Setup all page handlers.
   application.addHandler(Default.Handler, settings);

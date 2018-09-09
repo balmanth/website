@@ -5,6 +5,7 @@
 import * as Class from '@singleware/class';
 import * as Frontend from '@singleware/frontend';
 
+import { Settings } from '../../../browser/settings';
 import { View } from './view';
 
 /**
@@ -13,14 +14,46 @@ import { View } from './view';
 @Class.Describe()
 export class Handler {
   /**
+   * Application settings.
+   */
+  @Class.Private()
+  private settings: Settings;
+
+  /**
+   * Default constructor.
+   * @param settings
+   */
+  constructor(settings: Settings) {
+    this.settings = settings;
+  }
+
+  /**
    * Default action.
    * @param match Matched route.
    */
   @Class.Public()
-  @Frontend.Processor({ path: '/projects/singleware' })
+  @Frontend.Processor({ path: '/projects/singleware/' })
   public async defaultAction(match: Frontend.Match): Promise<void> {
     const output = match.detail.output;
-    output.title = 'Singleware project';
-    output.content = new View({});
+    output.subtitle = 'Singleware Project';
+    output.content = new View({
+      client: this.settings.client,
+      content: 'Default'
+    });
+  }
+
+  /**
+   * Example action.
+   * @param match Matched route.
+   */
+  @Class.Public()
+  @Frontend.Processor({ path: '/projects/singleware/{example}', constraint: { example: /[\w]+/i } })
+  public async exampleAction(match: Frontend.Match): Promise<void> {
+    const output = match.detail.output;
+    output.subtitle = 'Singleware Project';
+    output.content = new View({
+      client: this.settings.client,
+      content: match.variables.example
+    });
   }
 }
