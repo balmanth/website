@@ -36,7 +36,7 @@ export class Handler extends Backend.Handlers.File.Default {
    */
   @Class.Public()
   @Backend.Processor({ path: '/about', exact: false, environment: { methods: 'GET' } })
-  @Backend.Processor({ path: '/projects/singleware', exact: false, environment: { methods: 'GET' } })
+  @Backend.Processor({ path: '/projects/singleware/', exact: false, environment: { methods: 'GET' } })
   public async indexResponse(match: Backend.Match): Promise<void> {
     await this.setResponseFile(match.detail.output, '/index.html');
   }

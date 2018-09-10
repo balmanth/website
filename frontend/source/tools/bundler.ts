@@ -14,8 +14,8 @@ Bundler.compile({
       package: true
     },
     {
-      name: '@singleware/ui-control',
-      path: 'node_modules/@singleware/ui-control',
+      name: '@singleware/ui-routing',
+      path: 'node_modules/@singleware/ui-routing',
       package: true
     },
     {

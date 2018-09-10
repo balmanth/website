@@ -5,6 +5,7 @@
 import * as Class from '@singleware/class';
 import * as DOM from '@singleware/jsx';
 import * as Control from '@singleware/ui-control';
+import { Router, Route } from '@singleware/ui-routing';
 
 import { Sidebar } from './components';
 import { Properties } from './properties';
@@ -63,7 +64,21 @@ export class View extends Control.Component<Properties> {
           </Sidebar.Item>
         </Sidebar.Menu>
       </div>
-      <div class="content">{this.properties.content}</div>
+      <Router.Template class="content" source={this.properties.client}>
+        <Route.Template path="checkbox">Checkbox!</Route.Template>
+        <Route.Template path="dialog">Dialog!</Route.Template>
+        <Route.Template path="editor">Editor!</Route.Template>
+        <Route.Template path="field">Field!</Route.Template>
+        <Route.Template path="form">Form!</Route.Template>
+        <Route.Template path="import">Import!</Route.Template>
+        <Route.Template path="password">Password!</Route.Template>
+        <Route.Template path="progress">Progress!</Route.Template>
+        <Route.Template path="radiobox">Radiobox!</Route.Template>
+        <Route.Template path="switch">Switch!</Route.Template>
+        <Route.Template path="tabs">Tabs!</Route.Template>
+        <Route.Template path="toggle">Toggle!</Route.Template>
+        <Route.Template path="toolbar">Toolbar!</Route.Template>
+      </Router.Template>
     </div>
   ) as HTMLDivElement;
 

@@ -5,6 +5,7 @@
 import * as Class from '@singleware/class';
 import * as Frontend from '@singleware/frontend';
 
+import * as Examples from './examples';
 import { Settings } from '../../../browser/settings';
 import { View } from './view';
 
@@ -32,28 +33,12 @@ export class Handler {
    * @param match Matched route.
    */
   @Class.Public()
-  @Frontend.Processor({ path: '/projects/singleware/' })
+  @Frontend.Processor({ path: '/projects/singleware/', exact: false })
   public async defaultAction(match: Frontend.Match): Promise<void> {
     const output = match.detail.output;
     output.subtitle = 'Singleware Project';
     output.content = new View({
-      client: this.settings.client,
-      content: 'Default'
-    });
-  }
-
-  /**
-   * Example action.
-   * @param match Matched route.
-   */
-  @Class.Public()
-  @Frontend.Processor({ path: '/projects/singleware/{example}', constraint: { example: /[\w]+/i } })
-  public async exampleAction(match: Frontend.Match): Promise<void> {
-    const output = match.detail.output;
-    output.subtitle = 'Singleware Project';
-    output.content = new View({
-      client: this.settings.client,
-      content: match.variables.example
+      client: this.settings.client
     });
   }
 }

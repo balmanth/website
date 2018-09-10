@@ -12,8 +12,4 @@ interface Properties {
    * Application client.
    */
   client: Frontend.Services.Client;
-  /**
-   * Project content.
-   */
-  content: JSX.Element;
 }
