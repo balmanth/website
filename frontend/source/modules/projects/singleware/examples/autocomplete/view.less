@@ -1,0 +1,20 @@
+/**
+ * Copyright (C) 2018 balmante.eti.br
+ * Singleware autocomplete, view styles
+ */
+.main .project.singleware .content {
+  .autocomplete {
+    > .panel {
+      &.empty,
+      &.loading,
+      &.error,
+      > .item {
+        padding: 0.25rem 0.75rem;
+      }
+
+      &.error {
+        color: hsl(0, 100%, 40%);
+      }
+    }
+  }
+}

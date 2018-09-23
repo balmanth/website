@@ -19,6 +19,36 @@ Bundler.compile({
       package: true
     },
     {
+      name: '@singleware/ui-autocomplete',
+      path: 'node_modules/@singleware/ui-autocomplete',
+      package: true
+    },
+    {
+      name: '@singleware/ui-checkbox',
+      path: 'node_modules/@singleware/ui-checkbox',
+      package: true
+    },
+    {
+      name: '@singleware/ui-radiobox',
+      path: 'node_modules/@singleware/ui-radiobox',
+      package: true
+    },
+    {
+      name: '@singleware/ui-select',
+      path: 'node_modules/@singleware/ui-select',
+      package: true
+    },
+    {
+      name: '@singleware/ui-switch',
+      path: 'node_modules/@singleware/ui-switch',
+      package: true
+    },
+    {
+      name: '@singleware/ui-toggle',
+      path: 'node_modules/@singleware/ui-toggle',
+      package: true
+    },
+    {
       name: './browser',
       path: './frontend/release/browser'
     },

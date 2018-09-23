@@ -1,0 +1,27 @@
+/**
+ * Copyright (C) 2018 balmante.eti.br
+ * Singleware toggle, view styles
+ */
+.main .project.singleware .content {
+  .toggle {
+    display: inline-block;
+
+    span {
+      display: block;
+      cursor: pointer;
+      min-width: 2.5rem;
+      padding: 0.25rem 0.75rem;
+      background-color: hsl(0, 0%, 98%);
+      border: 0.0625rem solid hsl(0, 0%, 85%);
+      color: hsl(0, 0%, 25%);
+    }
+
+    &[data-checked] {
+      span {
+        background-color: hsl(0, 0%, 93%);
+        border-color: hsl(0, 0%, 80%);
+        color: hsl(0, 0%, 20%);
+      }
+    }
+  }
+}

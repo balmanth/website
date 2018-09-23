@@ -1,11 +1,11 @@
 /**
  * Copyright (C) 2018 balmante.eti.br
- * Singleware checkbox, view structure
+ * Singleware toggle, view structure
  */
 import * as Class from '@singleware/class';
 import * as DOM from '@singleware/jsx';
 import * as Control from '@singleware/ui-control';
-import * as Checkbox from '@singleware/ui-checkbox';
+import * as Toggle from '@singleware/ui-toggle';
 
 @Class.Describe()
 export class View extends Control.Component<{}> {
@@ -15,15 +15,15 @@ export class View extends Control.Component<{}> {
   @Class.Private()
   private skeleton = (
     <div>
-      <Checkbox.Template group="test" checked>
-        <div slot="mark" />
-      </Checkbox.Template>
-      <Checkbox.Template group="test">
-        <div slot="mark" />
-      </Checkbox.Template>
-      <Checkbox.Template group="test">
-        <div slot="mark" />
-      </Checkbox.Template>
+      <Toggle.Template class="toggle" group="test" checked>
+        <span slot="mark">A</span>
+      </Toggle.Template>
+      <Toggle.Template class="toggle" group="test">
+        <span slot="mark">B</span>
+      </Toggle.Template>
+      <Toggle.Template class="toggle" group="test">
+        <span slot="mark">C</span>
+      </Toggle.Template>
     </div>
   ) as HTMLDivElement;
 

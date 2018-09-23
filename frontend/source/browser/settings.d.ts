@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2018 balmante.eti.br
- * Frontend client.
+ * Frontend client settings.
  */
 import * as Frontend from '@singleware/frontend';
 

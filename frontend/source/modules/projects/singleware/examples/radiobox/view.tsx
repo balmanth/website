@@ -1,11 +1,11 @@
 /**
  * Copyright (C) 2018 balmante.eti.br
- * Singleware checkbox, view structure
+ * Singleware radiobox, view structure
  */
 import * as Class from '@singleware/class';
 import * as DOM from '@singleware/jsx';
 import * as Control from '@singleware/ui-control';
-import * as Checkbox from '@singleware/ui-checkbox';
+import * as Radiobox from '@singleware/ui-radiobox';
 
 @Class.Describe()
 export class View extends Control.Component<{}> {
@@ -15,15 +15,15 @@ export class View extends Control.Component<{}> {
   @Class.Private()
   private skeleton = (
     <div>
-      <Checkbox.Template group="test" checked>
+      <Radiobox.Template group="test" checked>
         <div slot="mark" />
-      </Checkbox.Template>
-      <Checkbox.Template group="test">
+      </Radiobox.Template>
+      <Radiobox.Template group="test">
         <div slot="mark" />
-      </Checkbox.Template>
-      <Checkbox.Template group="test">
+      </Radiobox.Template>
+      <Radiobox.Template group="test">
         <div slot="mark" />
-      </Checkbox.Template>
+      </Radiobox.Template>
     </div>
   ) as HTMLDivElement;
 

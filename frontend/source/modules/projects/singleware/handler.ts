@@ -5,7 +5,6 @@
 import * as Class from '@singleware/class';
 import * as Frontend from '@singleware/frontend';
 
-import * as Examples from './examples';
 import { Settings } from '../../../browser/settings';
 import { View } from './view';
 

@@ -7,6 +7,7 @@ import * as DOM from '@singleware/jsx';
 import * as Control from '@singleware/ui-control';
 import { Router, Route } from '@singleware/ui-routing';
 
+import * as Examples from './examples';
 import { Sidebar } from './components';
 import { Properties } from './properties';
 
@@ -16,12 +17,15 @@ export class View extends Control.Component<Properties> {
    * View skeleton.
    */
   @Class.Private()
-  private skeleton: HTMLDivElement = (
+  private skeleton = (
     <div class="singleware project">
       <div class="menu">
         <Sidebar.Menu client={this.properties.client}>
           <Sidebar.Item>
             <h4>UI Examples</h4>
+          </Sidebar.Item>
+          <Sidebar.Item>
+            <a href="autocomplete">Autocomplete</a>
           </Sidebar.Item>
           <Sidebar.Item>
             <a href="checkbox">Checkbox</a>
@@ -42,6 +46,9 @@ export class View extends Control.Component<Properties> {
             <a href="import">Import</a>
           </Sidebar.Item>
           <Sidebar.Item>
+            <a href="listview">Listview</a>
+          </Sidebar.Item>
+          <Sidebar.Item>
             <a href="password">Password</a>
           </Sidebar.Item>
           <Sidebar.Item>
@@ -49,6 +56,9 @@ export class View extends Control.Component<Properties> {
           </Sidebar.Item>
           <Sidebar.Item>
             <a href="radiobox">Radiobox</a>
+          </Sidebar.Item>
+          <Sidebar.Item>
+            <a href="select">Select</a>
           </Sidebar.Item>
           <Sidebar.Item>
             <a href="switch">Switch</a>
@@ -65,18 +75,35 @@ export class View extends Control.Component<Properties> {
         </Sidebar.Menu>
       </div>
       <Router.Template class="content" source={this.properties.client}>
-        <Route.Template path="checkbox">Checkbox!</Route.Template>
+        <Route.Template path="autocomplete">
+          <Examples.Autocomplete />
+        </Route.Template>
+        <Route.Template path="checkbox">
+          <Examples.Checkbox />
+        </Route.Template>
         <Route.Template path="dialog">Dialog!</Route.Template>
         <Route.Template path="editor">Editor!</Route.Template>
         <Route.Template path="field">Field!</Route.Template>
         <Route.Template path="form">Form!</Route.Template>
         <Route.Template path="import">Import!</Route.Template>
+        <Route.Template path="listview">
+          <Examples.Listview />
+        </Route.Template>
         <Route.Template path="password">Password!</Route.Template>
         <Route.Template path="progress">Progress!</Route.Template>
-        <Route.Template path="radiobox">Radiobox!</Route.Template>
-        <Route.Template path="switch">Switch!</Route.Template>
+        <Route.Template path="radiobox">
+          <Examples.Radiobox />
+        </Route.Template>
+        <Route.Template path="select">
+          <Examples.Select />
+        </Route.Template>
+        <Route.Template path="switch">
+          <Examples.Switch />
+        </Route.Template>
         <Route.Template path="tabs">Tabs!</Route.Template>
-        <Route.Template path="toggle">Toggle!</Route.Template>
+        <Route.Template path="toggle">
+          <Examples.Toggle />
+        </Route.Template>
         <Route.Template path="toolbar">Toolbar!</Route.Template>
       </Router.Template>
     </div>

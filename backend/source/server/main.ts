@@ -13,6 +13,9 @@ const appDevEnv = process.env.APPLICATION_ENVIRONMENT === 'development';
 // Main application instance.
 const application = new Backend.Main({});
 
+// Setup the HTTP logger.
+application.addLogger(Backend.Loggers.Console);
+
 // Setup the HTTP server.
 application.addService(Backend.Services.Server, {
   port: appPort,
@@ -21,9 +24,9 @@ application.addService(Backend.Services.Server, {
 
 // Setup the HTTP handler.
 const settings = {
-  strict: true,
-  directory: './frontend/public/',
-  index: 'index.html',
+  strictTypes: true,
+  baseDirectory: './frontend/public/',
+  indexFile: 'index.html',
   types: {
     html: 'text/html',
     css: 'text/css',
